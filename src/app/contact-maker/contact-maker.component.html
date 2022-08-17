@@ -1,0 +1,39 @@
+<form #form="ngForm" class="whole-form">
+  <mat-form-field>
+    <input
+      type="text"
+      placeholder="First Name"
+      id="first-name"
+      name="first-name"
+      [(ngModel)]="newContact.FirstName"
+      matInput
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      type="text"
+      placeholder="Last Name"
+      id="last-name"
+      name="last-name"
+      [(ngModel)]="newContact.LastName"
+      matInput
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      type="text"
+      placeholder="Phone Number"
+      id="phone-number"
+      name="phone-number"
+      [(ngModel)]="newContact.Number"
+      matInput
+    />
+  </mat-form-field>
+
+  <button mat-raised-button (click)="addContact(newContact)" color="primary">
+    Make Contact
+  </button>
+  <button mat-raised-button color="accent">Cancel</button>
+</form>
