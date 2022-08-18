@@ -32,4 +32,8 @@ export class ContactMakerComponent implements OnInit {
       Number: '',
     };
   }
+
+  makeContact(contact: Contacts) {
+    this.contactsService.makeContact(contact);
+  }
 }
