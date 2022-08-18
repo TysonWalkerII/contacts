@@ -48,7 +48,7 @@ export class ListComponent implements OnInit {
     );
   }
 
-  private fetchContacts() {
+  fetchContacts() {
     this.http
       .get<{ [key: string]: Contacts }>(
         'https://angular-project-e98dd-default-rtdb.firebaseio.com/contacts.json'

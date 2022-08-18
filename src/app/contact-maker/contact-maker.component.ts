@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Contacts } from '../shared/contacts';
 import { ListService } from '../shared/list-service.service';
 import { FormControl } from '@angular/forms';
+import { ListComponent } from '../list/list.component';
 
 @Component({
   selector: 'app-contact-maker',
@@ -9,7 +10,10 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./contact-maker.component.css'],
 })
 export class ContactMakerComponent implements OnInit {
-  constructor(private contactsService: ListService) {}
+  constructor(
+    private contactsService: ListService,
+    private thing: ListComponent
+  ) {}
   myControl = new FormControl();
   emailFormControl = new FormControl('', []);
 
@@ -31,9 +35,12 @@ export class ContactMakerComponent implements OnInit {
       LastName: '',
       Number: '',
     };
+    this.thing.fetchContacts();
+    this.thing.performFilter(this.thing.listFilter);
   }
 
   makeContact(contact: Contacts) {
     this.contactsService.makeContact(contact);
+    this.thing.fetchContacts();
   }
 }
