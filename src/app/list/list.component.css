@@ -1,3 +1,39 @@
 .list-of-contacts {
   width: fit-content;
 }
+.contactMaker {
+  position: fixed;
+  top: 40%;
+  right: 40%;
+  /* border: 1px black solid; */
+  border-radius: 11px;
+  padding: 10px;
+  box-shadow: 1px 1px 15px 1px rgba(0, 0, 0, 0.75);
+}
+
+.top {
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  /* background-color: #04aa6d; */
+  color: black;
+}
+#customers tr:hover {
+  background-color: #ddd;
+}
+
+#customers tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#customers td,
+#customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}

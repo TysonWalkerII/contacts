@@ -42,5 +42,12 @@ export class ContactMakerComponent implements OnInit {
   makeContact(contact: Contacts) {
     this.contactsService.makeContact(contact);
     this.thing.fetchContacts();
+    this.thing.contactMaker();
+    this.thing.listFilter = '';
+    this.thing.fetchContacts();
+  }
+
+  change() {
+    this.thing.contactMaker();
   }
 }

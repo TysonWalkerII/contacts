@@ -1,9 +1,30 @@
 .whole-form {
   display: flex;
   flex-direction: column;
-  width: 400px;
+  /* width: 400px;
   border: solid 1px black;
   border-radius: 2%;
-  padding: 5px;
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  margin: 50%;*/
+  /* box-shadow: 1px 1px 1px 100vw rgba(0, 0, 0, 0.75); */
+  /* position: absolute;
+  top: 50vh;
+  left: 50vw;
+  z-index: 1;*/
+}
+
+.container {
+  /* display: flex;
+  flex-direction: column;
+  position: fixed;
+  align-items: center; */
+
+  backdrop-filter: blur(2px);
+  /* top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 3; */
+}
+
+.buttons {
+  margin: 2px;
 }
