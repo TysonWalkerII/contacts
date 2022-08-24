@@ -19,28 +19,10 @@ export interface PeriodicElement {
   styleUrls: ['./list.component.css'],
 })
 export class ListComponent implements OnInit {
-  errorMessage = 'something went wrong again';
-  listFilterString: string = '';
   contacts: Contacts[] = [];
   filteredList: Contacts[] = [];
-  sub!: Subscription;
   contactMakerState = true;
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  displayedColumns2: string[] = ['FirstName', 'LastName', 'Number', 'Id'];
-  ContactsArray: Contacts[] = [
-    { id: 1, FirstName: 'Hydrogen', LastName: 'Hydrogen', Number: 'H' },
-    { id: 2, FirstName: 'Helium', LastName: 'Hydrogen', Number: 'He' },
-    { id: 3, FirstName: 'Lithium', LastName: 'Hydrogen', Number: 'Li' },
-    { id: 4, FirstName: 'Beryllium', LastName: 'Hydrogen', Number: 'Be' },
-    { id: 5, FirstName: 'Boron', LastName: 'Hydrogen', Number: 'B' },
-    { id: 6, FirstName: 'Carbon', LastName: 'Hydrogen', Number: 'C' },
-    { id: 7, FirstName: 'Nitrogen', LastName: 'Hydrogen', Number: 'N' },
-    { id: 8, FirstName: 'Oxygen', LastName: 'Hydrogen', Number: 'O' },
-    { id: 9, FirstName: 'Fluorine', LastName: 'Hydrogen', Number: 'F' },
-    { id: 10, FirstName: 'Neon', LastName: 'Hydrogen', Number: 'Ne' },
-  ];
-  dataSource = ELEMENT_DATA;
-  dataSource2 = this.ContactsArray;
+
   constructor(private contactsService: ListService, private http: HttpClient) {}
   contactMaker() {
     if (this.contactMakerState == true) {
@@ -54,19 +36,6 @@ export class ListComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchContacts();
-    console.log(this.dataSource2);
-    // this.contacts = this.contactsService.getNumbers();
-
-    //this.sub = this.contactsService.getNumbers().subscribe({
-    //  next: (contacts) => {
-    //    this.contacts = contacts;
-    //    this.filteredList = this.contacts;
-    //  },
-    //  error: (err) => (this.errorMessage = err),
-    //});
-    //this.fetchContacts();
-
-    //this.filteredList = this.contactsService.getNumbers();
   }
 
   set listFilter(value: string) {
@@ -106,15 +75,3 @@ export class ListComponent implements OnInit {
       });
   }
 }
-const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-  { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
-  { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
-  { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
-  { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
-  { position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' },
-  { position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N' },
-  { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
-  { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
-  { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
-];

@@ -1,5 +1,5 @@
 <div class="container">
-  <form #form="ngForm" class="whole-form">
+  <form #form="ngForm" class="form">
     <mat-form-field>
       <input
         type="text"
@@ -34,14 +34,14 @@
     </mat-form-field>
 
     <button
-      class="buttons"
+      class="btn"
       mat-raised-button
       (click)="makeContact(newContact)"
       color="primary"
     >
       Make Contact
     </button>
-    <button class="buttons" mat-raised-button color="accent" (click)="change()">
+    <button class="btn" mat-raised-button color="accent" (click)="change()">
       Cancel
     </button>
   </form>

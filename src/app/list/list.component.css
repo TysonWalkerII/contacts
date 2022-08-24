@@ -1,7 +1,7 @@
 .list-of-contacts {
   width: fit-content;
 }
-.contactMaker {
+.form {
   position: fixed;
   top: 40%;
   right: 40%;
@@ -17,23 +17,23 @@
   justify-content: space-between;
 }
 
-#customers th {
+#tbl th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
   /* background-color: #04aa6d; */
   color: black;
 }
-#customers tr:hover {
+#tbl tr:hover {
   background-color: #ddd;
 }
 
-#customers tr:nth-child(even) {
+#tbl tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-#customers td,
-#customers th {
+#tbl td,
+#tbl th {
   border: 1px solid #ddd;
   padding: 8px;
 }
